@@ -1,7 +1,7 @@
 <?php
     //Author: Richard Cerone
     $targetDir = "map_images/"; //Directory where file will be uploaded.
-    $targetFile = $targetDir . basename($_FILES["file"]["name"]); //File to be uploaded.
+    $targetFile = $targetDir . uniqid() . "_" . basename($_FILES["file"]["name"]); //File to be uploaded with unique id.
     echo "targetFile: ".$targetFile;
     $uploadOk = 1; //Upload status: 1 means OK, 0 means error.
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));//Grabs file type.
@@ -49,7 +49,8 @@
     {
         if(move_uploaded_file($_FILES["file"]["tmp_name"],$targetFile))
         {
-            echo "The file ". basename($_FILES["file"]["name"]). " = has been uploaded.";
+            //Redirect to editMap.php with javascript.
+          ?> <script src="redirectFromUpload.js"></script> <?php
         }
         else
         {

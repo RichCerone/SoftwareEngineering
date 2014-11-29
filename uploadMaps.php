@@ -3,7 +3,6 @@
     <body>
         <!--Author: Richard Cerone-->
         <!--Title-->
-        <button id="editMap">Edit Map</button>
         <h1>Upload A New Map</h1>
         <?php
             include "./db.php"; //Connect to database.
