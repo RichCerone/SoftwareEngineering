@@ -76,6 +76,7 @@ body
     width:auto;
     background:white;
     overflow:hidden;
+	padding:10px;
 }
 .right {
     width:200px;
